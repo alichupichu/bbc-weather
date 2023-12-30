@@ -32,8 +32,8 @@
             <li><a href="#">Culture</a></li>
             <li><a href="#">...</a></li>
             <li><div class="website-search">
-              <input type="text" placeholder="Search BBC" />
-              <button><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              <input type="text" placeholder="Search BBC" class="website-input"/>
+              <button class="website-search-button"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
              <image style="overflow:visible;enable-background:new    ;" width="128" height="128" xlink:href="59955D5B5E8CD31D.png"  transform="matrix(0.7812 0 0 0.7812 -2.202988e-03 -2.203941e-03)">
              </image>
@@ -64,27 +64,27 @@
         <div class="forecast-card">
           <!-- Daily forecast cards go here -->
           <div class="daily-forecast-card rootToday">
-              <h2 id="todayDateRoot">Today</h2>
-              <p id="todayCityRoot">CITY</p>
-              <img src="./images/weather-icons/sunny-icon.svg" alt="Sunny" id="weatherIconRoot">
-              <p id="todayTempMaxRoot" >High: 28°C</p>
-              <p id="todayTempMinRoot" >Low: 18°C</p>
-              <p id="todayDescriptionRoot" >Clear skies</p>
+
+            <div class="card-top">
+              <p id="todayDateRoot" class="today-date">Today in</p>
+              <p class="city" id="todayCityRoot">CITY</p>
+            </div>
+
+            <div class="card-bottom">
+               <!-- <h2 class="temp" id="todayTempRoot">TEMPERATURE</h2> -->
+              <img  class="icon"src="./images/weather-icons/sunny-icon.svg" alt="Sunny" id="weatherIconRoot">
+              <div class="max-min-temp">
+                <p class="max-temp" id="todayTempMaxRoot" >High: 28°C</p>
+                <p class="min-temp" id="todayTempMinRoot" >Low: 18°C</p>
+              </div>
+              <div class="card-line"></div>
+              <div class="card-description">
+                <p class="description" id="todayDescriptionRoot" >Clear skies</p>
+              </div>
+
+            </div>
+              
           </div>
-          <!-- <div class="daily-forecast-card rootTomorrow">
-              <h2>Tomorrow</h2>
-              <img src="weather-sunny.png" alt="Sunny">
-              <p>High: 28°C</p>
-              <p>Low: 18°C</p>
-              <p>Clear skies</p>
-          </div>
-          <div class="daily-forecast-card">
-            <h2>The day after that</h2>
-            <img src="weather-sunny.png" alt="Sunny">
-            <p>High: 28°C</p>
-            <p>Low: 18°C</p>
-            <p>Clear skies</p>
-          </div> -->
 
         </div>
 

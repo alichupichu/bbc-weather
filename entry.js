@@ -1,6 +1,7 @@
 const rootRefToday = document.getElementById("rootToday");
 const todayDateRootRef = document.getElementById("todayDateRoot");
 const weatherIconRootRef = document.getElementById("weatherIconRoot");
+const todayTempRootRef = document.getElementById("todayTempRoot");
 const todayTempMaxRootRef = document.getElementById("todayTempMaxRoot");
 const todayTempMinRootRef = document.getElementById("todayTempMinRoot");
 const todayDescriptionRootRef = document.getElementById("todayDescriptionRoot");
@@ -13,6 +14,7 @@ import { getLocation } from "./location.js";
 const spinner = `<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
 
 todayDateRootRef.innerHTML = `TODAY`;
+todayTempRootRef.innerHTML = `here goes temp`;
 todayTempMaxRootRef.innerHTML = `here goes the max temp`;
 todayTempMinRootRef.innerHTML = `here goes the min temp`;
 todayDescriptionRootRef.innerHTML = `here goes the description`;
