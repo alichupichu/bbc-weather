@@ -165,6 +165,10 @@ header {
     display: flex;
     flex-direction: row;
     align-content: flex-start;
+
+    .space{
+      width: 5px;
+    }
   }
 
   .card-bottom {
@@ -306,12 +310,13 @@ header {
   border: none;
   outline: none;
   padding: 5px;
+  background-color: #0000007b;
 
   .website-input {
     border: none;
     outline: none;
     padding: 5px 10px;
-    background-color: white;
+    background-color: #00000028;
     color: rgb(58, 58, 58);
     font-family: inherit;
     font-size: 19px;
@@ -323,6 +328,6 @@ header {
     height: 20px;
     width: 20px;
     outline: none;
-    background-color: white;
+    background-color: #00000028;
   }
 }
