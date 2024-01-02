@@ -22,7 +22,7 @@ todayCityRootRef.innerHTML = `here goes city Name`;
 
 async function getAPIData(value) {
   const result = await axios.get(
-    `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=e135612bb4f8e46add41bdebe1c186ab`
+    "https://api.openweathermap.org/data/2.5/weather?q=${name}&&units=metric&appid=e135612bb4f8e46add41bdebe1c186ab"
   );
 
   let { name, temp_min, temp_max, dt } = result.data[0];
@@ -42,7 +42,7 @@ async function getWeatherData(lat, lon) {
     const { name } = result.data.sys;
 
     const coordsFromAPI = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=e135612bb4f8e46add41bdebe1c186ab`
+      "https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=e135612bb4f8e46add41bdebe1c186ab"
     );
 
     console.log(coordsFromAPI);
@@ -50,7 +50,7 @@ async function getWeatherData(lat, lon) {
     const { lat, lon } = coordsFromAPI.data[0];
 
     const result = await axios.get(
-      `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=e135612bb4f8e46add41bdebe1c186ab`
+      "https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&appid=e135612bb4f8e46add41bdebe1c186ab"
     );
 
     const { dt } = result.data.sys;
