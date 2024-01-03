@@ -20,14 +20,14 @@ todayCityRootRef.innerHTML = `here goes city Name`;
 
 async function getAPIData(cityname) {
   const result = await axios.get(
-    `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&&units=metric&appid=e135612bb4f8e46add41bdebe1c186ab`
+    `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=e135612bb4f8e46add41bdebe1c186ab`
   );
   console.log(result.data);
 
-  const { name, temp, max_temp, min_temp, description, dt } = result.data[0];
+  const { name, max_temp, min_temp, description, dt } = result.data[0];
 
   todayDateRootRef.innerHTML = `${dt}`;
-  todayTempRootRef.innerHTML = `${temp}`;
+  //todayTempRootRef.innerHTML = `${temp}`;
   todayTempMaxRootRef.innerHTML = `${max_temp}`;
   todayTempMinRootRef.innerHTML = `${min_temp}`;
   todayDescriptionRootRef.innerHTML = `${description}`;
