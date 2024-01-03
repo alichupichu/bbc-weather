@@ -98,6 +98,9 @@ header {
   align-items: center;
   padding-left: 50px;
 }
+//.section:nth-child(even) {
+//  background-color: #e0e0e0;
+//}
 
 .right-menu {
   display: flex;
@@ -133,10 +136,6 @@ header {
   font-size: 38px;
   font-family: inherit;
   padding-right: 20px;
-}
-
-.section:nth-child(even) {
-  background-color: #e0e0e0;
 }
 
 .forecast-card {
@@ -194,16 +193,14 @@ header {
     margin: 3px 5px;
   }
 
-  .today-date {
-  }
+  //.today-date {}
 
   .temp {
     margin: 0;
     height: 80px;
   }
 
-  .city {
-  }
+  //.city { }
 
   .icon {
     margin: 3px 5px;
@@ -211,11 +208,9 @@ header {
     width: 90px;
   }
 
-  .max-temp {
-  }
+  //.max-temp {}
 
-  .min-temp {
-  }
+  //.min-temp {}
 
   .description {
     margin: 0;
