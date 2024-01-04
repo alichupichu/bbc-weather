@@ -133,6 +133,7 @@ header {
   padding-right: 20px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   font-size: 1.25rem;
   color: #ffffff;
   padding-left: 50px;
@@ -248,31 +249,46 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: white;
 }
-
-.search-input {
+.location-search button {
+  height: 40px;
+  width: 40px;
+}
+.location-search .search-input {
   border: none;
   outline: none;
   padding: 5px 10px;
   background-color: white;
   color: rgb(58, 58, 58);
   font-family: inherit;
-  font-size: 19px;
+  font-size: 20px;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 700px;
+  height: 40px;
+}
+.location-search .search-button {
+  margin: 5px;
+  border: none;
+  height: 40px;
+  width: 40px;
+  outline: none;
+  background-color: white;
+}
+.location-search .search-button:hover {
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  color: #149edc;
 }
 
-.search-button {
+.geolocation-button {
   margin: 5px;
   border: none;
   height: 20px;
   width: 20px;
   outline: none;
   background-color: white;
-}
-
-.search-button:hover {
-  transition: 0.2s ease-in-out;
-  cursor: pointer;
-  color: #149edc;
 }
 
 .website-search {
@@ -282,24 +298,23 @@ header {
   border: none;
   outline: none;
   padding: 5px;
-  background-color: rgba(0, 0, 0, 0.4823529412);
+  background-color: #efefef;
 }
-
-.website-input {
+.website-search .website-input {
   border: none;
   outline: none;
   padding: 5px 10px;
-  background-color: rgba(0, 0, 0, 0.1568627451);
-  color: rgb(58, 58, 58);
+  background-color: #efefef;
+  color: rgb(38, 38, 38);
   font-family: inherit;
   font-size: 19px;
+  height: 22px;
 }
-
-.website-search-button {
+.website-search .website-search-button {
   margin: 5px;
   border: none;
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   outline: none;
-  background-color: rgba(0, 0, 0, 0.1568627451);
+  background-color: #efefef;
 }/*# sourceMappingURL=styles.css.map */

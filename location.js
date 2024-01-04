@@ -6,6 +6,8 @@ export function getLocation() {
       resolve(data);
     }
 
-    function error() {}
+    function error(error) {
+      reject(error);
+    }
   });
 }

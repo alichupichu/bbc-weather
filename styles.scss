@@ -124,6 +124,7 @@ header {
   padding-right: 20px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   font-size: 1.25rem;
   color: #ffffff;
   padding-left: 50px;
@@ -256,31 +257,49 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.search-input {
-  border: none;
-  outline: none;
-  padding: 5px 10px;
   background-color: white;
-  color: rgb(58, 58, 58);
-  font-family: inherit;
-  font-size: 19px;
+
+  button {
+    height: 40px;
+    width: 40px;
+  }
+
+  .search-input {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    background-color: white;
+    color: rgb(58, 58, 58);
+    font-family: inherit;
+    font-size: 20px;
+    min-width: fit-content;
+    width: 700px;
+    height: 40px;
+  }
+
+  .search-button {
+    margin: 5px;
+    border: none;
+    height: 40px;
+    width: 40px;
+    outline: none;
+    background-color: white;
+  }
+
+  .search-button:hover {
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    color: #149edc;
+  }
 }
 
-.search-button {
+.geolocation-button {
   margin: 5px;
   border: none;
   height: 20px;
   width: 20px;
   outline: none;
   background-color: white;
-}
-
-.search-button:hover {
-  transition: 0.2s ease-in-out;
-  cursor: pointer;
-  color: #149edc;
 }
 
 .website-search {
@@ -290,24 +309,25 @@ header {
   border: none;
   outline: none;
   padding: 5px;
-  background-color: #0000007b;
-}
+  background-color: #efefef;
 
-.website-input {
-  border: none;
-  outline: none;
-  padding: 5px 10px;
-  background-color: #00000028;
-  color: rgb(58, 58, 58);
-  font-family: inherit;
-  font-size: 19px;
-}
+  .website-input {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    background-color: #efefef;
+    color: rgb(38, 38, 38);
+    font-family: inherit;
+    font-size: 19px;
+    height: 22px;
+  }
 
-.website-search-button {
-  margin: 5px;
-  border: none;
-  height: 20px;
-  width: 20px;
-  outline: none;
-  background-color: #00000028;
+  .website-search-button {
+    margin: 5px;
+    border: none;
+    height: 30px;
+    width: 30px;
+    outline: none;
+    background-color: #efefef;
+  }
 }
