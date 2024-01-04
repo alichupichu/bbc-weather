@@ -98,9 +98,6 @@ header {
   align-items: center;
   padding-left: 50px;
 }
-//.section:nth-child(even) {
-//  background-color: #e0e0e0;
-//}
 
 .right-menu {
   display: flex;
@@ -238,6 +235,7 @@ header {
   color: #fff;
   padding: 10px;
   text-align: center;
+  list-style: none;
 }
 
 .footer-menu nav ul {

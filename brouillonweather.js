@@ -19,19 +19,31 @@ todayDescriptionRootRef.innerHTML = `here goes the description`;
 todayCityRootRef.innerHTML = `here goes city Name`;
 
 async function getAPIData(cityname) {
-  const result = await axios.get(
-    `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=e135612bb4f8e46add41bdebe1c186ab`
-  );
-  console.log(result.data);
+  rootRefToday.innerHTML = spinner;
 
-  const { name, max_temp, min_temp, description, dt } = result.data[0];
+  try {
+    const result = await axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=e135612bb4f8e46add41bdebe1c186ab`
+    );
+    console.log(result.data);
 
-  todayDateRootRef.innerHTML = `${dt}`;
-  //todayTempRootRef.innerHTML = `${temp}`;
-  todayTempMaxRootRef.innerHTML = `${max_temp}`;
-  todayTempMinRootRef.innerHTML = `${min_temp}`;
-  todayDescriptionRootRef.innerHTML = `${description}`;
-  todayCityRootRef.innerHTML = `${name}`;
+    const { name, max_temp, min_temp, description, dt } = result.data[0];
+
+    todayDateRootRef.innerHTML = `${dt}`;
+    //todayTempRootRef.innerHTML = `${temp}`;
+    todayTempMaxRootRef.innerHTML = `${max_temp}`;
+    todayTempMinRootRef.innerHTML = `${min_temp}`;
+    todayDescriptionRootRef.innerHTML = `${description}`;
+    todayCityRootRef.innerHTML = `${name}`;
+  } catch (err) {
+    rootRefToday.innerHTML = `API down, try again later`;
+    todayDateRootRef.innerHTML = `API down, try again later`;
+    //todayTempRootRef.innerHTML = `API down, try again later`;
+    todayTempMaxRootRef.innerHTML = `API down, try again later`;
+    todayTempMinRootRef.innerHTML = `API down, try again later`;
+    todayDescriptionRootRef.innerHTML = `API down, try again later`;
+    todayCityRootRef.innerHTML = `API down, try again later`;
+  }
 }
 
 citySearchInputRef.addEventListener("input", (e) => {
