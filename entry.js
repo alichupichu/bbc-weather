@@ -38,8 +38,8 @@ async function getweatherAPIData(cityname) {
 
     todayDateRootRef.innerHTML = `${humanDt.toDateString()}`;
     //todayTempRootRef.innerHTML = `${temp}`;
-    todayTempMaxRootRef.innerHTML = `${temp_max}`;
-    todayTempMinRootRef.innerHTML = `${temp_min}`;
+    todayTempMaxRootRef.innerHTML = `${Math.round(temp_max)}`;
+    todayTempMinRootRef.innerHTML = `${Math.round(temp_min)}`;
     todayDescriptionRootRef.innerHTML = `${description}`;
     todayCityRootRef.innerHTML = `${name}`;
     weatherIconRootRef.setAttribute(
@@ -50,12 +50,6 @@ async function getweatherAPIData(cityname) {
   } catch (err) {
     console.log(err);
     rootRefToday.innerHTML = `API down, try again later`;
-    todayDateRootRef.innerHTML = `API down, try again later`;
-    //todayTempRootRef.innerHTML = `API down, try again later`;
-    todayTempMaxRootRef.innerHTML = `API down, try again later`;
-    todayTempMinRootRef.innerHTML = `API down, try again later`;
-    todayDescriptionRootRef.innerHTML = `API down, try again later`;
-    todayCityRootRef.innerHTML = `API down, try again later`;
   }
 }
 

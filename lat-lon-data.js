@@ -2,7 +2,7 @@ import { getLocation } from "./location.js";
 
 const geolocationButtonRef = document.getElementById("geolocationButton");
 const rootRefToday = document.getElementById("rootToday");
-const spinner = `<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
+const spinner = `<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
 
 const todayDateRootRef = document.getElementById("todayDateRoot");
 const weatherIconRootRef = document.getElementById("weatherIconRoot");
@@ -35,8 +35,8 @@ export async function getLatLongWeatherAPIData() {
 
     todayDateRootRef.innerHTML = `${humanDt.toDateString()}`;
     //todayTempRootRef.innerHTML = `${temp}`;
-    todayTempMaxRootRef.innerHTML = `${temp_max}`;
-    todayTempMinRootRef.innerHTML = `${temp_min}`;
+    todayTempMaxRootRef.innerHTML = `${Math.round(temp_max)}`;
+    todayTempMinRootRef.innerHTML = `${Math.round(temp_min)}`;
     todayDescriptionRootRef.innerHTML = `${description}`;
     todayCityRootRef.innerHTML = `${name}`;
     weatherIconRootRef.setAttribute(
@@ -46,13 +46,7 @@ export async function getLatLongWeatherAPIData() {
     weatherIconRootRef.style.display = "initial";
   } catch (err) {
     console.log(err);
-    //rootRefToday.innerHTML = `API down, try again later`;
-    todayDateRootRef.innerHTML = `API down, try again later`;
-    //todayTempRootRef.innerHTML = `API down, try again later`;
-    todayTempMaxRootRef.innerHTML = `API down, try again later`;
-    todayTempMinRootRef.innerHTML = `API down, try again later`;
-    todayDescriptionRootRef.innerHTML = `API down, try again later`;
-    todayCityRootRef.innerHTML = `API down, try again later`;
+    rootRefToday.innerHTML = `API down, try again later`;
   }
 }
 
