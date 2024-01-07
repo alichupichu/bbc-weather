@@ -12,14 +12,14 @@ const todayCityRootRef = document.getElementById("todayCityRoot");
 
 const citySearchInputRef = document.getElementById("citySearchInput");
 
-const spinner = `<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
+const spinner = `<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
 
-todayDateRootRef.innerHTML = `TODAY`;
+//todayDateRootRef.innerHTML = `TODAY`;
 //todayTempRootRef.innerHTML = `here goes temp`;
-todayTempMaxRootRef.innerHTML = `here goes the max temp`;
-todayTempMinRootRef.innerHTML = `here goes the min temp`;
-todayDescriptionRootRef.innerHTML = `here goes the description`;
-todayCityRootRef.innerHTML = `here goes city Name`;
+//todayTempMaxRootRef.innerHTML = `here goes the max temp`;
+//todayTempMinRootRef.innerHTML = `here goes the min temp`;
+//todayDescriptionRootRef.innerHTML = `here goes the description`;
+//todayCityRootRef.innerHTML = `here goes city Name`;
 
 async function getweatherAPIData(cityname) {
   rootRefToday.innerHTML = spinner;
@@ -30,17 +30,25 @@ async function getweatherAPIData(cityname) {
     );
     console.log(result.data);
 
-    const { name, max_temp, min_temp, description, dt } = result.data[0];
+    const { name, dt } = result.data;
+    const { temp_max, temp_min } = result.data.main;
+    const { description, icon } = result.data.weather[0];
 
-    const hunamDt = new Date(dt * 1000);
+    const humanDt = new Date(dt * 1000);
 
-    todayDateRootRef.innerHTML = `${humant.toDateString()}`;
+    todayDateRootRef.innerHTML = `${humanDt.toDateString()}`;
     //todayTempRootRef.innerHTML = `${temp}`;
-    todayTempMaxRootRef.innerHTML = `${max_temp}`;
-    todayTempMinRootRef.innerHTML = `${min_temp}`;
+    todayTempMaxRootRef.innerHTML = `${temp_max}`;
+    todayTempMinRootRef.innerHTML = `${temp_min}`;
     todayDescriptionRootRef.innerHTML = `${description}`;
     todayCityRootRef.innerHTML = `${name}`;
+    weatherIconRootRef.setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${icon}@2x.png`
+    );
+    weatherIconRootRef.style.display = "initial";
   } catch (err) {
+    console.log(err);
     rootRefToday.innerHTML = `API down, try again later`;
     todayDateRootRef.innerHTML = `API down, try again later`;
     //todayTempRootRef.innerHTML = `API down, try again later`;
@@ -51,10 +59,8 @@ async function getweatherAPIData(cityname) {
   }
 }
 
-getweatherAPIData();
-
 citySearchInputRef.addEventListener("input", (e) => {
-  getweatherAPIData(e.target.cityname);
+  getweatherAPIData(e.target.value);
 });
 
 // 1. connect html markers with javascript DONE
