@@ -103,6 +103,7 @@
 }
 body {
   font-family: ReithSans, ReithSans-Bold, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -227,13 +228,13 @@ header .menu-header .right-menu a {
   margin: 0;
   height: 80px;
 }
-.daily-forecast-card .icon {
-  margin: 3px 5px;
-  height: 90px;
-  width: 90px;
+.daily-forecast-card .city {
+  color: #333;
 }
 .daily-forecast-card .description {
   margin: 0;
+  text-transform: capitalize;
+  padding-left: 10px;
 }
 
 .settings-menu {

@@ -35,7 +35,7 @@ async function getweatherAPIData(cityname) {
 
     const humanDt = new Date(dt * 1000);
 
-    todayDateRootRef.innerHTML = `${humanDt.toDateString()}`;
+    //todayDateRootRef.innerHTML = `${humanDt.toDateString()}`;
     //todayTempRootRef.innerHTML = `${temp}`;
     todayTempMaxRootRef.innerHTML = `${Math.round(temp_max)}`;
     todayTempMinRootRef.innerHTML = `${Math.round(temp_min)}`;

@@ -96,6 +96,7 @@
 
 body {
   font-family: ReithSans, ReithSans-Bold, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -233,16 +234,14 @@ header {
     height: 80px;
   }
 
-  //.city { }
-
-  .icon {
-    margin: 3px 5px;
-    height: 90px;
-    width: 90px;
+  .city {
+    color: #333;
   }
 
   .description {
     margin: 0;
+    text-transform: capitalize;
+    padding-left: 10px;
   }
 }
 
