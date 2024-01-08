@@ -1,69 +1,35 @@
-.forecast-card {
+@font-face {
+  font-family: ReithSand;
+  src: url(./fonts/reith/BBCReithSerif_W_Rg.woff) format ("woff"),
+    url(./fonts/reith/BBCReithSerif_W_Rg.woff2) format ("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: ReithSand-Bold;
+  src: url(./fonts/reith/BBCReithSerif_W_ExBd.woff) format ("woff"),
+    url(./fonts/reith/BBCReithSerif_W_ExBd.woff2) format ("woff2");
+  font-weight: 700;
+}
+
+body {
+  font-family: ReithSans, ReithSans-Bold, Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+  background-image: url("https://source.unsplash.com/1600x900/?weather,snow");
+  background-position: center;
+  background-size: cover;
 }
 
 .daily-forecast-card {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: lightblue;
-  min-width: 500 px;
-  flex-direction: column;
+  background-color: white;
   padding: 20px;
   border-radius: 3px;
-  border-top: 8px;
-  border-color: green;
+  width: 100%;
+  max-width: 420px;
   margin: 20px;
-}
-
-.one-card {
-  flex-direction: column;
-}
-
-.card-bottom {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-around;
-  padding: 5px;
-}
-
-.card-line {
-  width: 1px;
-  background-color: #000000;
-  height: 90px;
-  margin: 3px 5px;
-}
-
-.max-min-temp {
-  margin: 0px;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-}
-
-.card-description {
-  margin: 3px 5px;
-}
-/*.today-date {}*/
-.temp {
-  margin: 0;
-  height: 80px;
-}
-
-/*.city {}*/
-
-.icon {
-  margin: 3px 5px;
-  height: 90px;
-  width: 90px;
-}
-
-/*.max-temp {}
-
-  //.min-temp {}*/
-
-.description {
-  margin: 0;
 }

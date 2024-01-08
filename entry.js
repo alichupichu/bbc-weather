@@ -22,13 +22,12 @@ const spinner = `<div class="lds-spinner"><div></div><div></div><div></div><div>
 //todayCityRootRef.innerHTML = `here goes city Name`;
 
 async function getweatherAPIData(cityname) {
-  rootRefToday.innerHTML = spinner;
+  //rootRefToday.innerHTML = spinner;
 
   try {
     const result = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=e135612bb4f8e46add41bdebe1c186ab`
     );
-    console.log(result.data);
 
     const { name, dt } = result.data;
     const { temp_max, temp_min } = result.data.main;

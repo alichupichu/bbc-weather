@@ -13,19 +13,16 @@ const todayDescriptionRootRef = document.getElementById("todayDescriptionRoot");
 const todayCityRootRef = document.getElementById("todayCityRoot");
 
 export async function getLatLongWeatherAPIData() {
-  console.log(rootRefToday);
-  rootRefToday.innerHTML = spinner;
+  //rootRefToday.innerHTML = spinner;
 
   try {
     const data = await getLocation();
-    console.log(data);
 
     const { latitude, longitude } = data.coords;
 
     const result = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=e135612bb4f8e46add41bdebe1c186ab`
     );
-    console.log(result.data);
 
     const { name, dt } = result.data;
     const { temp_max, temp_min } = result.data.main;
