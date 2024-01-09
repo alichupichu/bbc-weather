@@ -163,8 +163,7 @@ header .menu-header .right-menu a {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: black;
-  background-image: url("https://source.unsplash.com/1600x900/?weather,snow");
+  background-image: url("./images/loadingBacground.png");
   background-position: center;
   background-size: cover;
 }
@@ -176,7 +175,7 @@ header .menu-header .right-menu a {
 }
 
 .daily-forecast-card {
-  background-color: white;
+  background-color: rgba(185, 224, 242, 0.8862745098);
   padding: 20px;
   border-radius: 3px;
   width: 100%;
@@ -324,7 +323,8 @@ header .menu-header .right-menu a {
   outline: none;
   background-color: white;
 }
-.geolocation-button .geolocation-button:hover {
+
+.geolocation-button:hover {
   transition: 0.2s ease-in-out;
   cursor: pointer;
 }

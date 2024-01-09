@@ -2,18 +2,21 @@ import { getLocation } from "./location.js";
 
 const geolocationButtonRef = document.getElementById("geolocationButton");
 const rootRefToday = document.getElementById("rootToday");
-const spinner = `<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
+//const spinner = `<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
 
-const todayDateRootRef = document.getElementById("todayDateRoot");
+//const todayDateRootRef = document.getElementById("todayDateRoot");
 const weatherIconRootRef = document.getElementById("weatherIconRoot");
-//const todayTempRootRef = document.getElementById("todayTempRoot");
+const todayTempRootRef = document.getElementById("todayTempRoot");
 const todayTempMaxRootRef = document.getElementById("todayTempMaxRoot");
 const todayTempMinRootRef = document.getElementById("todayTempMinRoot");
 const todayDescriptionRootRef = document.getElementById("todayDescriptionRoot");
 const todayCityRootRef = document.getElementById("todayCityRoot");
+const cardBackgroundRef = document.getElementById("cardBackground");
 
 export async function getLatLongWeatherAPIData() {
   //rootRefToday.innerHTML = spinner;
+  cardBackgroundRef.style.backgroundImage =
+    "url('./images/loadingBacground.png')";
 
   try {
     const data = await getLocation();
@@ -25,13 +28,13 @@ export async function getLatLongWeatherAPIData() {
     );
 
     const { name, dt } = result.data;
-    const { temp_max, temp_min } = result.data.main;
-    const { description, icon } = result.data.weather[0];
+    const { temp, temp_max, temp_min } = result.data.main;
+    const { main, description, icon } = result.data.weather[0];
 
     const humanDt = new Date(dt * 1000);
 
-    todayDateRootRef.innerHTML = `${humanDt.toDateString()}`;
-    //todayTempRootRef.innerHTML = `${temp}`;
+    //todayDateRootRef.innerHTML = `${humanDt.toDateString()}`;
+    todayTempRootRef.innerHTML = `${Math.round(temp)}`;
     todayTempMaxRootRef.innerHTML = `${Math.round(temp_max)}`;
     todayTempMinRootRef.innerHTML = `${Math.round(temp_min)}`;
     todayDescriptionRootRef.innerHTML = `${description}`;
@@ -40,6 +43,8 @@ export async function getLatLongWeatherAPIData() {
       "src",
       `https://openweathermap.org/img/wn/${icon}@2x.png`
     );
+    cardBackgroundRef.style.backgroundImage =
+      "url('https://source.unsplash.com/1600x900/?${name},${main}')";
     weatherIconRootRef.style.display = "initial";
   } catch (err) {
     console.log(err);
