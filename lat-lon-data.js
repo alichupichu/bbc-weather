@@ -2,9 +2,7 @@ import { getLocation } from "./location.js";
 
 const geolocationButtonRef = document.getElementById("geolocationButton");
 const rootRefToday = document.getElementById("rootToday");
-//const spinner = `<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
 
-//const todayDateRootRef = document.getElementById("todayDateRoot");
 const weatherIconRootRef = document.getElementById("weatherIconRoot");
 const todayTempRootRef = document.getElementById("todayTempRoot");
 const todayTempMaxRootRef = document.getElementById("todayTempMaxRoot");
@@ -14,10 +12,6 @@ const todayCityRootRef = document.getElementById("todayCityRoot");
 const cardBackgroundRef = document.getElementById("cardBackground");
 
 export async function getLatLongWeatherAPIData() {
-  //rootRefToday.innerHTML = spinner;
-  cardBackgroundRef.style.backgroundImage =
-    "url('./images/loadingBacground.png')";
-
   try {
     const data = await getLocation();
 
