@@ -10,6 +10,7 @@ const todayCityRootRef = document.getElementById("todayCityRoot");
 const cardBackgroundRef = document.getElementById("cardBackground");
 
 const citySearchInputRef = document.getElementById("citySearchInput");
+const rootRefToday = document.getElementById("rootToday");
 
 const spinner = `<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
 
@@ -37,7 +38,7 @@ async function getweatherAPIData(cityname) {
     );
     weatherIconRootRef.style.display = "initial";
     cardBackgroundRef.style.backgroundImage =
-      "url(`https://source.unsplash.com/1600x900/?${name},${main}`)";
+      "url('https://source.unsplash.com/1600x900/?${name},${main}')";
   } catch (err) {
     console.log(err);
     rootRefToday.innerHTML = `API down, try again later`;
