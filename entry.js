@@ -11,7 +11,10 @@ const cardBackgroundRef = document.getElementById("cardBackground");
 
 const citySearchInputRef = document.getElementById("citySearchInput");
 
+const spinner = `<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
+
 async function getweatherAPIData(cityname) {
+  rootRefToday.innerHTML = spinner;
   try {
     const result = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=e135612bb4f8e46add41bdebe1c186ab`

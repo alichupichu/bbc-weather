@@ -11,7 +11,11 @@ const todayDescriptionRootRef = document.getElementById("todayDescriptionRoot");
 const todayCityRootRef = document.getElementById("todayCityRoot");
 const cardBackgroundRef = document.getElementById("cardBackground");
 
+const spinner = `<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
+
 export async function getLatLongWeatherAPIData() {
+  rootRefToday.innerHTML = spinner;
+
   try {
     const data = await getLocation();
 
